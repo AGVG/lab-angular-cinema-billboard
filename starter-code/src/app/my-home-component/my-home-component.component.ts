@@ -13,6 +13,9 @@ import { Cinema } from '../services/cinema.service';
       <tr *ngFor="let movie of movies">
         <td> {{ movie.title }} </td>
         <td>
+          <button (click)="viewDetails(movie.id)"> details (btn)  </button>
+        </td>
+        <td>
           <a [routerLink]="['movie',movie.id]"> details (link) </a>
         </td>
       </tr>
@@ -20,6 +23,7 @@ import { Cinema } from '../services/cinema.service';
   `,
   styleUrls: ['./my-home-component.component.css']
 })
+
 export class MyHomeComponentComponent implements OnInit {
 
   constructor(private router: Router, private cinema: Cinema) { }
@@ -27,6 +31,10 @@ export class MyHomeComponentComponent implements OnInit {
 
   ngOnInit() {
     this.movies
+  }
+
+  viewDetails(id) {
+    this.router.navigate(['movie', id]);
   }
 
 }

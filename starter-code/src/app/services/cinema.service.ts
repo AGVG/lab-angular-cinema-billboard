@@ -69,7 +69,12 @@ export class Cinema {
    }
 
   getMovie(id) {
-    this.router.navigate(['movie', id]);
+    let newMovie: Object;
+    this.movies.forEach((movie) => {
+      if (movie["id"] === id){
+        newMovie = movie;
+      }
+    })
+    return newMovie;
+    }
   }
-
-}
