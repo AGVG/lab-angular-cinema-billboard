@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cinema } from '../services/cinema.service';
 
 @Component({
   selector: 'app-my-movie-component',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyMovieComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private cinema: Cinema) { }
 
   ngOnInit() {
   }

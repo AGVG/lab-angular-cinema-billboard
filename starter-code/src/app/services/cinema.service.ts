@@ -65,7 +65,7 @@ export class Cinema {
   constructor(private router: Router) { }
 
   getMovies(): Array<Object>{
-    return this.movies;
+      return this.movies
    }
 
   getMovie(id) {
